@@ -10,6 +10,10 @@ namespace StackAndQueue
     public class Stack
     {
         public Node top;
+        public Stack() 
+        {
+            top=null;
+        }
         public void Push(int data)
         {
             Node newNode = new Node(data);
@@ -26,13 +30,44 @@ namespace StackAndQueue
             }
         }
 
+        public void Peek()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is Empty");
+            }
+            else
+            Console.WriteLine("{0} is the top most element", top.data);
+        }
+        public void Pop()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is Empty, Pop is not posible");
+            }
+            else
+            {
+                Console.WriteLine("Value Popped is"+ top.data);
+                top = top.next;
+            }
+        }
+        public bool IsEmpty()
+        {
+            while (top != null)
+            {
+                Peek();
+                Pop();
+            }
+            return true;
+        }
+
         public void Display()
 
         {
             Node temp = this.top;
             if (temp == null)
             {
-                Console.WriteLine("\nStack is Empty");
+                Console.WriteLine("Stack is Empty");
             }
             else
             {
