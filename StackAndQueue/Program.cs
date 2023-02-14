@@ -12,7 +12,7 @@ namespace StackAndQueue
         {
             Console.WriteLine("Welcome to Stack and Queue Programs");
             Console.WriteLine("Choose the option of the program want to perform");
-            Console.WriteLine("1. Push Operationb \n2. Peek and Pop Operation");
+            Console.WriteLine("1. Push Operationb \n2. Peek and Pop Operation \n3. Enqueue Operation");
             int option=Convert.ToInt32(Console.ReadLine());
             switch(option)
             {
@@ -21,9 +21,9 @@ namespace StackAndQueue
                     stack.Push(70);
                     stack.Push(30);
                     stack.Push(56);
-                    stack.Display();
+                    stack.Display();//56 30 70 display same as AddFirst
                     break;
-                    case 2:
+                case 2:
                     Stack popStack=new Stack();
                     popStack.Push(70);
                     popStack.Push(30);
@@ -33,6 +33,13 @@ namespace StackAndQueue
                     popStack.Pop();
                     //Console.WriteLine(popStack.IsEmpty());
                     popStack.Display();
+                    break;
+                case 3:
+                    Queue queue=new Queue();
+                    queue.Enqueue(56);
+                    queue.Enqueue(30);
+                    queue.Enqueue(70);
+                    queue.Display();//56 30 70 same as AddLast Head marked on the first node
                     break;
                 default:
                     Console.WriteLine("Please choose the correct option");
